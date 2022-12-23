@@ -1,0 +1,28 @@
+.details {
+  margin: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product_details_image {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.product_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 100px;
+  padding-left: 30px;
+}
+
+.product_info-name {
+  font-size: 30px;
+}
+.detail_cta_btn {
+  border: none;
+  background: none;
+  font-size: 32px;
+}
