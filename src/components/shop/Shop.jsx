@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { PRODUCTS } from '../../assets/products';
 import Product from './Product';
 

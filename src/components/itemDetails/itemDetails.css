@@ -4,13 +4,13 @@
   justify-content: center;
   align-items: center;
 }
-.product_details_image {
+.productDetailsImage {
   width: 400px;
   height: 500px;
   object-fit: cover;
 }
 
-.product_info {
+.productInfo {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -18,11 +18,6 @@
   padding-left: 30px;
 }
 
-.product_info-name {
+.productInfoName {
   font-size: 30px;
-}
-.detail_cta_btn {
-  border: none;
-  background: none;
-  font-size: 32px;
 }

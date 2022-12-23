@@ -1,18 +1,17 @@
 import React from 'react';
 import { BsCartDashFill } from 'react-icons/bs';
 import { BsCartPlusFill } from 'react-icons/bs';
-import { PRODUCTS } from '../../assets/products';
 
 import { useShopContext } from '../../context/shopContext';
 
 const CartItems = () => {
-  const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
+  const { cartItem, itemIncrement, removeFromCart, updateCartItemCount } =
     useShopContext();
-  const cartItem = (product) => {
-    const { id, productName, price, productImage } = product;
+  const CartItem = (product, key) => {
+    const { id, productName, price, productImage, quantity } = product;
     return (
-      <div className="cartItem">
-        <div className="cart_image">
+      <div className="cartItem" key={key}>
+        <div className="cartImage">
           <img src={productImage} alt={productName} className="image" />
         </div>
         <div className="description">
@@ -23,20 +22,15 @@ const CartItems = () => {
             <p> Price: ${price}</p>
           </div>
           <div className="countHandler">
-            <button
-              onClick={() => removeFromCart(id)}
-              className="cart_item_btn"
-            >
-              {' '}
-              <BsCartDashFill />{' '}
+            <button onClick={() => removeFromCart(id)} className="cartItemBtn">
+              <BsCartDashFill />
             </button>
             <input
-              value={cartItems[id]}
+              value={quantity}
               onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
             />
-            <button onClick={() => addToCart(id)} className="cart_item_btn">
-              {' '}
-              <BsCartPlusFill />{' '}
+            <button onClick={() => itemIncrement(id)} className="cartItemBtn">
+              <BsCartPlusFill />
             </button>
           </div>
         </div>
@@ -44,8 +38,8 @@ const CartItems = () => {
     );
   };
 
-  return PRODUCTS.map((product) =>
-    cartItems[product.id] !== 0 ? cartItem(product) : '',
+  return cartItem.map((product, key) =>
+    product.quantity > 0 ? CartItem(product, key) : '',
   );
 };
 

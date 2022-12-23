@@ -22,7 +22,7 @@
   align-items: center;
 }
 
-.product_image {
+.productImage {
   width: 250px;
   height: 250px;
   object-fit: cover;
@@ -37,7 +37,7 @@
   object-fit: cover;
 }
 
-.product_details {
+.productDetails {
   margin-top: 10px;
   padding-left: 30px;
   width: 100%;
@@ -52,7 +52,7 @@
   transition: 0.3s ease-in;
 }
 
-.addToCartBttn {
+.addToCartBtn {
   background: #047bd5;
   border: 1px solid #047bd5;
   color: #fff;
@@ -69,11 +69,11 @@
   cursor: pointer;
 }
 
-.product_name {
+.productName {
   margin: 5px;
   margin-top: 15px;
 }
 
-.product_price {
+.productPrice {
   margin: 5px;
 }
